@@ -1,12 +1,32 @@
 
-marks = {"Math": 0, "Physics": 0, "Chemistry": 0, "Total": 0, "Percentage": 0, "Grade": ""}
+def func():
 
-# for i in range(0,len(marks)):
-#     if i < 3:
-#         mark = int(input("Enter the mark for " + list(marks.keys())[i] + ": "))
-#         marks[list(marks.keys())[i]] = mark
-    
+  marks = {"Math": 10, "Physics": 20, "Chemistry": 0,}
+  obtained = 0
+  total = 300
 
-word = "!!!!total!!!!"
+  grade = ""
+  for subject in marks:
+    marks[subject] = int(input(f"Enter your {subject} marks: "))
 
-print(word.strip("!"))
+
+  for  keys in marks:
+    obtained += marks[keys]
+
+  percentage = (obtained / total) * 100
+
+  if percentage >= 90:
+    grade = "A"
+  elif 90 > percentage >= 80:
+    grade = "B"
+  elif 80 > percentage >= 70:
+    grade = "C"
+  elif 70 > percentage >= 60:
+    grade = "D"
+  elif 60 > percentage >= 40:
+    grade = "E"
+  else:
+    grade = "F"
+  print(f"The Marks Obtained: {obtained} and Percentage: {percentage}% while Grade: {grade}")
+
+func()
